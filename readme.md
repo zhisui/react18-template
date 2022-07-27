@@ -174,3 +174,29 @@ module.exports = {
 
 ```
 
+### 加入alias别名配置
+
+在vite.config.ts中加入以下代码
+
+```
+import { defineConfig } from "vite"
+import react from "@vitejs/plugin-react"
+import path from "path"
+
+export default defineConfig({
+  plugins: [react()],
+  resolve: {
+    // 配置路径别名
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
+})
+```
+
+如果项目里面使用到了ts则从node中引入path的时候需要安装相应的type包
+
+```
+pnpm i @types/node -D
+```
+
