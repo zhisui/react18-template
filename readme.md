@@ -200,3 +200,14 @@ export default defineConfig({
 pnpm i @types/node -D
 ```
 
+然后在tsconfig.ts文件中加入以下代码
+
+```
+"compilerOptions": {
+	"baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+}
+```
+
