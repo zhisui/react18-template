@@ -3,13 +3,13 @@
 执行以下指令（本项目只用pnpm包管理工具）,然后根据提示选择就可以了
 
 ```
-使用pnpm 
+使用pnpm
 pnpm create vite
 
 使用yarn
 yarn create vite
 
-使用npm 
+使用npm
  npm create vite@latest
 ```
 
@@ -141,5 +141,36 @@ extends: [
     'plugin:prettier/recommended'
     ...
   ]
+```
+
+# stylelint
+
+```
+pnpm add stylelint stylelint-config-standard -D
+```
+
+在根目录下生成stylelint.js文件，初始化配置规则
+
+```
+module.exports = {
+    // 注册 stylelint 的 prettier 插件
+    plugins: ['stylelint-prettier'],
+    // 继承一系列规则集合
+    extends: [
+      // standard 规则集合
+      'stylelint-config-standard',
+      // 样式属性顺序规则
+      'stylelint-config-recess-order',
+      // 接入 Prettier 规则
+      'stylelint-config-prettier',
+      'stylelint-prettier/recommended'
+    ],
+    // 配置 rules
+    rules: {
+      // 开启 Prettier 自动格式化功能
+      'prettier/prettier': true
+    }
+  };
+
 ```
 
